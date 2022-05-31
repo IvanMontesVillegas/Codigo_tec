@@ -1,0 +1,188 @@
+<h1>
+    {{ titulo }}
+</h1>
+<!--*ngIf directiva-->
+<div *ngIf="alumno_externo == true">
+    <button (click)="cambiarExterno(false)">Mostrar Alumno Estrella</button>
+    <br><br>
+    <strong> Alumno estrella: </strong>
+    <ul>
+        <li>{{ alumno.nombre }}</li>
+        <li>{{ alumno.edad }}</li>
+        <li>{{ alumno.carrera }}</li>
+        <li>{{ alumno.semestre }}</li>
+        <li *ngIf="alumno.aprobado == true">Alumno Aprobado</li>
+        <li *ngIf="alumno.aprobado == false">Alumno Reprobado</li>
+    </ul>
+</div>
+
+<div *ngIf="alumno_externo == false">
+    <button (click)="cambiarExterno(true)">Mostrar Alumnos:</button>
+    <br><br>
+    <strong> Alumnos: </strong>
+    <ul>
+        <li>{{ alumnos[0].nombre }}</li>
+        <li>{{ alumnos[0].edad }}</li>
+        <li>{{ alumnos[0].carrera }}</li>
+        <li>{{ alumnos[0].semestre }}</li>
+        <li *ngIf="alumnos[0].aprobado == true">Alumno Aprobado</li>
+        <li *ngIf="alumnos[0].aprobado == false">Alumno Reprobado</li>
+    </ul>
+    <ul>
+        <li>{{ alumnos[1].nombre }}</li>
+        <li>{{ alumnos[1].edad }}</li>
+        <li>{{ alumnos[1].carrera }}</li>
+        <li>{{ alumnos[1].semestre }}</li>
+        <li *ngIf="alumnos[1].aprobado == true">Alumno Aprobado</li>
+        <li *ngIf="alumnos[1].aprobado == false">Alumno Reprobado</li>
+    </ul>
+    <ul>
+        <li>{{ alumnos[2].nombre }}</li>
+        <li>{{ alumnos[2].edad }}</li>
+        <li>{{ alumnos[2].carrera }}</li>
+        <li>{{ alumnos[2].semestre }}</li>
+        <li *ngIf="alumnos[2].aprobado == true">Alumno Aprobado</li>
+        <li *ngIf="alumnos[2].aprobado == false">Alumno Reprobado</li>
+    </ul>
+</div>
+
+<h3>Listado de Alumnos</h3>
+<ul>
+    <li *ngFor="let alumno of alumnos; let i = index">
+        <strong>Alumno {{i+1}}: </strong>
+        <ul>
+            <li>{{ alumno.nombre }}</li>
+            <li>{{ alumno.edad }}</li>
+            <li>{{ alumno.carrera }}</li>
+            <li>{{ alumno.semestre }}</li>
+            <li *ngIf="alumno.aprobado == true">Alumno Aprobado</li>
+            <li *ngIf="alumno.aprobado == false">Alumno Reprobado</li>
+        </ul>
+    </li>
+</ul>
+
+<hr/>
+<h3>Colores switch</h3>
+<ul [ngSwitch]="color">
+    <li *ngSwitchCase="'red'" [ngStyle]="{'background':color, 'color':'white', 'padding':'15px'}">Es de color ROJO</li>
+    <li *ngSwitchCase="'blue'" [ngStyle]="{'background':color, 'color':'white', 'padding':'15px'}">Es de color AZUL</li>
+    <li *ngSwitchCase="'green'" [ngStyle]="{'background':color, 'color':'white', 'padding':'15px'}">Es de color VERDE</li>
+</ul>
+
+<!--<div>
+    <button (click)="cambiarExterno(true)">Alumnos Aprobados</button>
+    
+        <li *ngFor="let alumno of alumnos; let alumno.aprobado=true; let i = index">
+            <strong>Alumno : </strong>
+            <ul>
+                <li>{{ alumno.nombre }}</li>
+                <li>{{ alumno.edad }}</li>
+                <li>{{ alumno.carrera }}</li>
+                <li>{{ alumno.semestre }}</li>
+                <li *ngIf="alumno.aprobado == true">Alumno Aprobado</li>
+                <li *ngIf="alumno.aprobado == false">Alumno Reprobado</li>
+            </ul>
+        </li>
+</div>-->
+
+<h3>Tablero de ajedrez</h3>
+<table [ngStyle]="{'padding':'0px', 'border-style': 'ridge','cellspacing':'0', 'cellpadding':'0'}">
+    <tr [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0'}">
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+    </tr>
+    <tr [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0'}">
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+    </tr>
+    <tr [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0'}">
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+    </tr>
+    <tr [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0'}">
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+    </tr>
+    <tr [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0'}">
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+    </tr>
+    <tr [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0'}">
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+    </tr>
+    <tr [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0'}">
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+    </tr>
+    <tr [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0'}">
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'black'}"></td>
+        <td [ngStyle]="{'padding':'20px', 'border':'0','cellspacing':'0', 'cellpadding':'0', 'background':'white'}"></td>
+    </tr>
+</table>
+
+<br><br>
+<table [ngStyle]="{'padding':'0px', 'border-style': 'ridge','cellspacing':'0', 'cellpadding':'0'}">
+    <tr>
+        <td [ngStyle]="{'padding':'20px', 'background':colorNegro}"></td>
+        <td [ngStyle]="{'padding':'20px', 'background':colorBlanco}"></td>
+        <td [ngStyle]="{'padding':'20px', 'background':colorNegro}"></td>
+        <td [ngStyle]="{'padding':'20px', 'background':colorBlanco}"></td>
+        <td [ngStyle]="{'padding':'20px', 'background':colorNegro}"></td>
+    </tr>
+</table>
+<table [ngStyle]="{'padding':'0px', 'border-style': 'ridge','cellspacing':'0', 'cellpadding':'0'}">
+
+    <tr>
+        <td [ngStyle]="{'padding':'20px', 'background':colorBlanco}"></td>
+        <td [ngStyle]="{'padding':'20px', 'background':colorNegro}"></td>
+    </tr>
+</table>
