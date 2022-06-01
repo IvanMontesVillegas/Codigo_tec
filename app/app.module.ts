@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+//importando las variables de rutas----appRoutProviders brindara servicios de rutas
+import { routing, appRoutingProviders } from './app-routing.module';
+//importando los componentes
 import { AppComponent } from './app.component';
 import { FrutaComponent } from './fruta/fruta.component';
 import { empleadosComponent } from './empleados/empleados.component';
@@ -14,9 +16,10 @@ import { AlumnoComponent } from './alumnos/alumnos.component';
     AlumnoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    routing
   ],
-  providers: [],
+  providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
