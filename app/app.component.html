@@ -166,7 +166,7 @@
   a,
   a:visited,
   a:hover {
-    color: #1976d2;
+    color: #05090c;
     text-decoration: none;
   }
 
@@ -300,6 +300,11 @@
       visibility: hidden;
     }
   }
+  .activado{
+    font-weight: bold;
+    background: yellow;
+    color: blue;
+  }
 </style>
 
 <!-- Toolbar -->
@@ -330,11 +335,16 @@
   <!--<fruta></fruta>-->
   <hr>
   <!--<alumno></alumno>-->
-
+  <nav>
+    <a [routerLink]="['/home']" [routerLinkActive]="['activado']"> HOME</a> -
+    <a [routerLink]="['/alumnos']" [routerLinkActive]="['activado']"> ALUMNOS</a> -
+    <a [routerLink]="['/fruta']" [routerLinkActive]="['activado']"> FRUTA</a> - 
+    <a [routerLink]="['/contacto']" [routerLinkActive]="['activado']"> CONTACTO </a>
+  </nav>
   <!-- Carga para la ruta asociada al router.ts-->
   <router-outlet></router-outlet>  
 
-  
+
 
 </div>
 
