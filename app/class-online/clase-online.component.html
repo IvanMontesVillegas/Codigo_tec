@@ -1,0 +1,36 @@
+<style>
+    table, th, td {
+        border: 1px solid;
+    }
+    table {
+        width: 150%;
+        border-collapse: collapse;
+    }
+</style>
+<h1>
+    {{ titulo }}
+</h1>
+
+<div>
+    <strong> Clase-Online</strong>
+    <table>
+        <tr>
+            <th>Docente</th>
+            <th>Materia</th>
+            <th>Semestre</th>
+            <th>Horario</th>
+        </tr>
+        <tr>
+            <td>{{clases[0].docente}}</td>
+            <td>{{clases[0].materia}}</td>
+            <td>{{clases[0].semestre}}</td>
+            <td>{{clases[0].horario}}</td>
+        </tr>
+        <tr>
+            <td>{{clases[1].docente}}</td>
+            <td>{{clases[1].materia}}</td>
+            <td>{{clases[1].semestre}}</td>
+            <td>{{clases[1].horario}}</td>
+        </tr>
+    </table>
+</div>

@@ -5,12 +5,14 @@ import { FrutaComponent } from "./fruta/fruta.component";
 import { AlumnoComponent } from "./alumnos/alumnos.component";
 import { HomeComponent } from "./home/home.component";
 import { ContactoComponent } from "./contactos/contacto.component";
+import { ClaseComponent } from "./class-online/clase-online.component";
 
 const appRoutes:Routes = [
     { path: 'home', component:HomeComponent },
     { path: 'fruta', component:FrutaComponent },
     { path: 'alumnos', component:AlumnoComponent },
     { path: 'contacto', component:ContactoComponent },
+    { path: 'clasesOnline', component:ClaseComponent},
     { path: '**', component:ContactoComponent }
 ];
 
